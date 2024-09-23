@@ -7,12 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 embeddings_model = QianfanEmbeddingsEndpoint()
 embedding = QianfanEmbeddingsEndpoint()
+# 向量数据库持久化path
 persist_directory = f'C:\\Users\\Downloads\\chroma\\'
 
 
 def save_pdf(file_path, file_name):
-    # file_path = f"C:\\Users\\Downloads\\{file_name}.pdf"
-    # file_name = file_path.split("\\")[-1].rstrip(".pdf")
     loader = PyPDFLoader(file_path)
     # 分割
     text_spliter = RecursiveCharacterTextSplitter(
